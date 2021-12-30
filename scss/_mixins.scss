@@ -1,0 +1,28 @@
+// Mixins
+@mixin m-flex ($display, $f-direction, $f-wrap, $j-content, $a-items) {
+    display: $display;
+    flex-direction: $f-direction;
+    flex-wrap: $f-wrap;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
+@mixin m-text ($size, $height, $t-color){
+    font-size: $size;
+    line-height: $height;
+    $color: $t-color;
+    
+}
+// Extend
+.s-boton{
+    width: 100%;
+
+    &:hover{
+        transform: scale(1.1, 1.1);
+        transition: 400ms;
+    }
+}
+.responsivo{
+    width: 100%;
+    height: auto;
+}
