@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <!-- Aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <!-- Título -->
     <title>HISPRO - Servicios</title>
     <!-- Mi css -->
@@ -46,10 +48,10 @@
             <!-- Páginas -->
             <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                    <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
                     <a class="nav-link" href="publicaciones.html">Publicaciones</a>
                     <a class="nav-link" href="conocenos.html">Conocenos</a>
-                    <a class="nav-link" href="servicios.html">Servicios</a>
+                    <a class="nav-link active" href="servicios.html">Servicios</a>
                     <a class="nav-link" href="contacto.html">Contacto</a>
                 </div>
             </div>
@@ -73,44 +75,62 @@
                 </div>
             </div>
             <!-- Imágen - precios-->
+            <!-- Opcion1 -->
+            <div class="img-op1" data-aos="fade-left"><img src="../img/precio-granjero-1.png" alt="Precios de los servicios"></div>
             <div class="opcion1 contenedor__flexible container">
                 <div class="seccion_titulo">
                     <h1>GRANJERO</h1>
                 </div>
-                <img src="../img/precio-granjero-1.png" alt="Precios de los servicios">
                 <div class="seccion__parrafo">
-                    <p>Una clase virtual/ Una tarea o trabajo práctico/ Un asesoramiento para monografías o trabajos
-                        finales.</p>
+                    <ul>
+                        <li>Una clase virtual</li>
+                        <li>Una tarea o trabajo práctico</li>
+                        <li>Un asesoramiento para monografías o trabajos
+                            finales.</li>
+                    </ul>
                 </div>
                 <div type="button" class="btn btn-secondary boton__color">COMPRAR</div>
             </div>
+            <!-- Opcion2 -->
+            <div class="img-op2" data-aos="fade-right"><img src="../img/precio-noble-2.png" alt="Precios de los servicios"></div>
             <div class="opcion2 contenedor__flexible container">
                 <h1>NOBLE</h1>
-                <img src="../img/precio-noble-2.png" alt="Precios de los servicios">
-                <p>Tres clases virtuales/ Dos tareas o trabajos practicos + consultas post-clases/ Ayuda práctica con
-                    investigaciones o monografías.</p>
+                <ul>
+                    <li>Tres clases virtuales</li>
+                    <li>Dos tareas o trabajos practicos + consultas post-clases</li>
+                    <li>Ayuda práctica con investigaciones o monografías</li>
+                </ul>
                 <div type="button" class="btn btn-secondary boton__color">COMPRAR</div>
             </div>
+            <!-- Opcion3 -->
+            <div class="img-op3" data-aos="fade-left"><img src="../img/precio-rey-3.png" alt="Precios de los servicios"></div>
             <div class="opcion3 contenedor__flexible container">
                 <h1>REY</h1>
-                <img src="../img/precio-rey-3.png" alt="Precios de los servicios">
-                <p>¡Te ayudamos con lo que necesites! Con consultas las 24hs del día.</p>
+                <ul>
+                    <li>¡Te ayudamos con lo que necesites!</li>
+                    <li>Con consultas las 24hs del día</li>
+                </ul>
                 <div type="button" class="btn btn-secondary boton__color">COMPRAR</div>
             </div>
         </div>
     </main>
 
-    <footer class="navbar navbar-expand-lg navbar-dark nav_bg">
+    <footer class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid footer__contenedor">
             <div>
-                <a class="navbar-brand" href="../index.html">HISPRO</a>
+                <a class="navbar-brand" href="index.html">HISPRO</a>
             </div>
             <div class="footer_redes">
-                <a href="../index.html"><img src="../img/socialmedia_discord.svg" alt="discord"></a>
+                <a href="index.html"><img src="../img/socialmedia_discord.svg" alt="discord"></a>
             </div>
             <div class="footer_redes">
-                <a href="../index.html"><img src="../img/socialmedia_insta.svg" alt="discord"></a>
+                <a href="index.html"><img src="../img/socialmedia_insta.svg" alt="instagram"></a>
             </div>
         </div>
     </footer>
+    <!-- Aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>

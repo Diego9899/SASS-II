@@ -5,9 +5,9 @@
   font-family: "Poppins", sans-serif;
   transition: all 600ms; }
 
-.s-boton, .boton__color {
+.s-boton, .boton__color, .grilla__contacto .seccion__boton button {
   width: 100%; }
-  .s-boton:hover, .boton__color:hover {
+  .s-boton:hover, .boton__color:hover, .grilla__contacto .seccion__boton button:hover {
     transform: scale(1.1, 1.1);
     transition: 400ms; }
 
@@ -103,11 +103,18 @@ header {
   height: auto; }
 
 .boton__color {
-  background-color: #f27830; }
+  background-color: #f27830;
+  max-width: 30%; }
 
 footer {
   margin-top: 11em;
   background-color: #f27830; }
+  footer .footer__contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: space-around; }
   footer .container-fluid .footer_redes a {
     list-style: none;
     text-decoration: none;
@@ -119,8 +126,8 @@ footer {
 .grilla__servicios {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.4fr 20% repeat(3, 1fr);
-  grid-template-areas: "banner"  "titulo" "opcion1"  "opcion2" "opcion3";
+  grid-template-rows: 0.4fr 20% repeat(6, 1fr);
+  grid-template-areas: "banner" "titulo" "opcion1" "img-op1" "opcion2" "img-op2" "opcion3" "img-op3";
   row-gap: 2em; }
   .grilla__servicios .titulo {
     grid-area: titulo;
@@ -131,10 +138,16 @@ footer {
     align-items: flex-start; }
   .grilla__servicios .opcion1 {
     grid-area: opcion1; }
+  .grilla__servicios .img-op1 {
+    grid-area: img-op1; }
   .grilla__servicios .opcion2 {
     grid-area: opcion2; }
+  .grilla__servicios .img-op2 {
+    grid-area: img-op2; }
   .grilla__servicios .opcion3 {
     grid-area: opcion3; }
+  .grilla__servicios .img-op3 {
+    grid-area: img-op3; }
   .grilla__servicios .contenedor__flexible {
     display: flex;
     flex-direction: column;
@@ -145,8 +158,8 @@ footer {
 .grilla__publicaciones {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 10% 10% 1fr 10% 1fr 10% 1fr 10% 1fr;
-  grid-template-areas: "banner" "titulo" "a-imagen1" "articulo1" "a-imagen2" "articulo2" "a-imagen3" "articulo3" "a-imagen4" "articulo4";
+  grid-template-rows: 10% 10% 10% 1fr 10% 1fr;
+  grid-template-areas: "banner" "titulo" "a-imagen1" "articulo1" "a-imagen2" "articulo2";
   row-gap: 2em;
   justify-content: flex-start; }
   .grilla__publicaciones .titulo {
@@ -178,7 +191,7 @@ footer {
   grid-template-rows: 10% 10% 1fr 10% 1fr 10% 1fr 1fr;
   grid-template-areas: "banner" "titulo" "articulo1" "a-imagen1" "articulo2" "a-imagen2" "articulo3" "articulo3";
   row-gap: 2em;
-  justify-content: flex-start; }
+  justify-content: space-around; }
   .grilla__conocenos .titulo {
     grid-area: titulo; }
   .grilla__conocenos .articulo1 {
@@ -196,6 +209,39 @@ footer {
   .grilla__conocenos .articulo3 {
     grid-area: articulo3; }
 
+.grilla__contacto {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 1fr 1fr 1fr 10%;
+  grid-template-areas: "titulo" "nombre" "mail" "consulta" "boton";
+  row-gap: 2em;
+  justify-content: flex-start;
+  grid-auto-flow: column; }
+  .grilla__contacto .banner {
+    grid-area: banner; }
+  .grilla__contacto .seccion__titulo {
+    grid-area: titulo;
+    margin-top: 5em; }
+    .grilla__contacto .seccion__titulo h1 {
+      font-size: calc(1.5em + 1.5vw);
+      line-height: 1.5em; }
+    .grilla__contacto .seccion__titulo p {
+      font-size: calc(1.5em + 1.5vw);
+      line-height: 1.5em; }
+  .grilla__contacto .seccion__formulario__nombre {
+    grid-area: nombre;
+    max-width: 50%; }
+  .grilla__contacto .seccion__formulario__email {
+    grid-area: mail; }
+  .grilla__contacto .seccion__formulario__consulta {
+    grid-area: consulta;
+    max-width: 50%; }
+  .grilla__contacto .seccion__boton {
+    grid-area: boton;
+    max-width: 20%; }
+    .grilla__contacto .seccion__boton button {
+      background-color: #f27830; }
+
 @media only screen and (min-width: 600px) {
   .grilla {
     grid-template-columns: 1fr 1fr;
@@ -209,7 +255,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 10% 10% repeat(3, 1fr);
-    grid-template-areas: "banner banner"  "titulo titulo" "opcion1 opcion1"  "opcion2 opcion2" "opcion3 opcion3"; }
+    grid-template-areas: "banner banner" "titulo titulo" "opcion1 img-op1" "img-op2 opcion2" "opcion3 img-op3"; }
     .grilla__servicios .contenedor__flexible {
       display: flex;
       flex-direction: column;
@@ -220,7 +266,14 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 10% 10% 1fr 1fr 1fr;
-    grid-template-areas: "banner banner" "titulo titulo" "articulo1 a-imagen1" "a-imagen2 articulo2" "articulo3 articulo3"; } }
+    grid-template-areas: "banner banner" "titulo titulo" "articulo1 a-imagen1" "a-imagen2 articulo2" "articulo3 articulo3"; }
+  .grilla__contacto {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr 1fr 10%;
+    grid-template-areas: "titulo titulo" "nombre ." "mail ." "consulta ." "boton .";
+    justify-content: center; }
+    .grilla__contacto .seccion__boton {
+      max-width: 50%; } }
 
 @media only screen and (min-width: 900px) {
   .grilla {
@@ -233,8 +286,8 @@ footer {
       height: auto; }
   .grilla__publicaciones {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 20% 20% repeat(4, 1fr);
-    grid-template-areas: "banner banner banner" "titulo titulo titulo" "articulo1 articulo1 a-imagen1" "articulo2 articulo2 a-imagen2" "articulo3 articulo3 a-imagen3" "articulo4 articulo4 a-imagen4";
+    grid-template-rows: 20% 20% repeat(2, 1fr);
+    grid-template-areas: "banner banner banner" "titulo titulo titulo" "articulo1 articulo1 a-imagen1" "articulo2 articulo2 a-imagen2";
     align-items: center; }
   .grilla__conocenos {
     display: grid;

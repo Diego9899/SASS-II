@@ -122,11 +122,15 @@ header {
 .boton__color {
   background-color: $colorprincipal;
   @extend .s-boton;
+  max-width: 30%;
 }
 // Footer //
 footer {
   margin-top: 11em;
   background-color: $colorprincipal;
+    .footer__contenedor{
+      @include m-flex(flex, row, nowrap, space-around, space-around)
+    }
 
   & .container-fluid {
     .footer_redes {
@@ -136,7 +140,6 @@ footer {
         color: white;
       }
     }
-
     & img {
       width: 100%;
       max-height: 32px;
@@ -147,13 +150,16 @@ footer {
 .grilla__servicios {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.4fr 20% repeat(3, 1fr);
+  grid-template-rows: 0.4fr 20% repeat(6, 1fr);
   grid-template-areas:
-    "banner" 
+    "banner"
     "titulo"
-    "opcion1" 
+    "opcion1"
+    "img-op1"
     "opcion2"
-    "opcion3";
+    "img-op2"
+    "opcion3"
+    "img-op3";
   row-gap: 2em;
 
   .titulo {
@@ -163,12 +169,22 @@ footer {
   .opcion1 {
     grid-area: opcion1;
   }
+  .img-op1{
+    grid-area: img-op1;
+  }
   .opcion2 {
     grid-area: opcion2;
+  }
+  .img-op2{
+    grid-area: img-op2;
   }
   .opcion3 {
     grid-area: opcion3;
   }
+  .img-op3{
+    grid-area: img-op3;
+  }
+
   .contenedor__flexible {
     @include m-flex(flex, column, wrap, center, flex-start);
   }
@@ -177,18 +193,14 @@ footer {
 .grilla__publicaciones {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 10% 10% 1fr 10% 1fr 10% 1fr 10% 1fr;
+  grid-template-rows: 10% 10% 10% 1fr 10% 1fr;
   grid-template-areas:
     "banner"
     "titulo"
     "a-imagen1"
     "articulo1"
     "a-imagen2"
-    "articulo2"
-    "a-imagen3"
-    "articulo3"
-    "a-imagen4"
-    "articulo4";
+    "articulo2";
   row-gap: 2em;
   justify-content: flex-start;
 
@@ -243,7 +255,7 @@ footer {
     "articulo3"
     "articulo3";
   row-gap: 2em;
-  justify-content: flex-start;
+  justify-content: space-around;
 
   .titulo {
     grid-area: titulo;
@@ -272,6 +284,54 @@ footer {
     grid-area: articulo3;
   }
 }
+// Contacto
+.grilla__contacto {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 1fr 1fr 1fr 10%;
+  grid-template-areas:
+    "titulo"
+    "nombre"
+    "mail"
+    "consulta"
+    "boton";
+  row-gap: 2em;
+  justify-content: flex-start;
+  grid-auto-flow: column;
+  .banner {
+    grid-area: banner;
+  }
+  .seccion__titulo {
+    grid-area: titulo;
+    margin-top: 5em;
+    h1 {
+      @include m-text($s-titulo-escala, 1.5em, black);
+    }
+
+    p {
+      @include m-text($s-titulo-escala, 1.5em, black);
+    }
+  }
+  .seccion__formulario__nombre {
+    grid-area: nombre;
+    max-width: 50%;
+  }
+  .seccion__formulario__email {
+    grid-area: mail;
+  }
+  .seccion__formulario__consulta {
+    grid-area: consulta;
+    max-width: 50%;
+  }
+  .seccion__boton {
+    grid-area: boton;
+    max-width: 20%;
+    button {
+      background-color: $colorprincipal;
+      @extend .s-boton;
+    }
+  }
+}
 // Media queries //
 // Dispositivos medianos //
 @media only screen and (min-width: 600px) {
@@ -298,17 +358,17 @@ footer {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 10% 10% repeat(3, 1fr);
     grid-template-areas:
-      "banner banner" 
+      "banner banner"
       "titulo titulo"
-      "opcion1 opcion1" 
-      "opcion2 opcion2"
-      "opcion3 opcion3";
-      
-      .contenedor__flexible {
-        @include m-flex(flex, column, wrap, center, center);
-      }
+      "opcion1 img-op1"
+      "img-op2 opcion2"
+      "opcion3 img-op3";
+
+    .contenedor__flexible {
+      @include m-flex(flex, column, wrap, center, center);
     }
-    
+  }
+
   // Conocenos
   .grilla__conocenos {
     display: grid;
@@ -321,7 +381,22 @@ footer {
       "a-imagen2 articulo2"
       "articulo3 articulo3";
   }
+  .grilla__contacto {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr 1fr 10%;
+    grid-template-areas:
+      "titulo titulo"
+      "nombre ."
+      "mail ."
+      "consulta ."
+      "boton .";
+    justify-content: center;
+    .seccion__boton {
+      max-width: 50%;
+    }
+  }
 }
+
 // Dispositivos grandes
 @media only screen and (min-width: 900px) {
   // Home //
@@ -344,26 +419,24 @@ footer {
   // Publicaciones
   .grilla__publicaciones {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 20% 20% repeat(4, 1fr);
+    grid-template-rows: 20% 20% repeat(2, 1fr);
     grid-template-areas:
       "banner banner banner"
       "titulo titulo titulo"
       "articulo1 articulo1 a-imagen1"
-      "articulo2 articulo2 a-imagen2"
-      "articulo3 articulo3 a-imagen3"
-      "articulo4 articulo4 a-imagen4";
+      "articulo2 articulo2 a-imagen2";
     align-items: center;
   }
-    // Conocenos
-    .grilla__conocenos {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 10% 10% 1fr 1fr 1fr;
-      grid-template-areas:
-        "banner banner banner"
-        "titulo titulo titulo"
-        "articulo1 articulo1 a-imagen1"
-        "a-imagen2 articulo2 articulo2"
-        "articulo3 articulo3 articulo3";
-    }
+  // Conocenos
+  .grilla__conocenos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10% 10% 1fr 1fr 1fr;
+    grid-template-areas:
+      "banner banner banner"
+      "titulo titulo titulo"
+      "articulo1 articulo1 a-imagen1"
+      "a-imagen2 articulo2 articulo2"
+      "articulo3 articulo3 articulo3";
+  }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <!-- Título -->
     <title>HISPRO - Conocenos</title>
     <!-- Mi css -->
@@ -47,49 +47,54 @@
             <!-- Páginas -->
             <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                    <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
                     <a class="nav-link" href="publicaciones.html">Publicaciones</a>
                     <a class="nav-link" href="conocenos.html">Conocenos</a>
                     <a class="nav-link" href="servicios.html">Servicios</a>
-                    <a class="nav-link" href="contacto.html">Contacto</a>
+                    <a class="nav-link active" href="contacto.html">Contacto</a>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
+    <main class="grilla__contacto container">
         <!-- Formulario de contacto -->
-        <section class="container">
-            <div class="card-title">
-                <h1>¿Querés contactarte con nosotros?</h1>
-                <p>¡Llená el siguiente formulario!</p>
-            </div>
-            <div class="card">
+        <div class="card-title seccion__titulo">
+            <h1>¿Querés contactarte con nosotros?</h1>
+            <p>¡Llená el siguiente formulario!</p>
+        </div>
+        <div class="seccion__formulario__nombre">
+            <div>
                 <form action="" method="get">
+                    <label for="formControlInput" class="form-label">Nombre</label>
                     <input type="text" class="form-control" placeholder="Nombre">
-                    <label for="formControlInput" class="form-label">Dirección de e-mail</label>
-                    <input type="email" class="form-control" id="formControlInput" placeholder="nombre@ejemplo.com">
+                </form>
             </div>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Deja tu comentario aquí" id="floatingTextarea"
-                    style="height: 100px"></textarea>
-                <label for="floatingTextarea">Consulta</label>
-            </div>
-            <div class="text-center">
-                <button type="button" class="btn btn-secondary btn_color disabled">Empieza ahora</button>
-            </div>
-        </section>
+        </div>
+        <div class="seccion_formulario__email">
+            <form action="" method="get">
+                <label for="formControlInput" class="form-label">Dirección de e-mail</label>
+                <input type="email" class="form-control" id="formControlInput" placeholder="nombre@ejemplo.com">
+            </form>
+        </div>
+        <div class="seccion__formulario__consulta form-floating">
+            <textarea class="form-control-sm" placeholder="Deja tu comentario aquí" id="floatingTextarea"
+                style="height: 100px"></textarea>
+            <label for="floatingTextarea"></label>
+        </div>
+        <div class="seccion__boton">
+            <button type="button" class="btn btn-secondary btn_color">Enviar</button>
+        </div>
     </main>
-
-    <footer class="navbar navbar-expand-lg navbar-dark nav_bg">
+    <footer class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid footer__contenedor">
             <div>
-                <a class="navbar-brand" href="../index.html">HISPRO</a>
+                <a class="navbar-brand" href="index.html">HISPRO</a>
             </div>
             <div class="footer_redes">
-                <a href="../index.html"><img src="../img/socialmedia_discord.svg" alt="discord"></a>
+                <a href="index.html"><img src="../img/socialmedia_discord.svg" alt="discord"></a>
             </div>
             <div class="footer_redes">
-                <a href="../index.html"><img src="../img/socialmedia_insta.svg" alt="discord"></a>
+                <a href="index.html"><img src="../img/socialmedia_insta.svg" alt="instagram"></a>
             </div>
         </div>
     </footer>
