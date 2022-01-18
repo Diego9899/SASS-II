@@ -1,9 +1,10 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  transition: all 600ms; }
+  font-family: "Poppins", sans-serif; }
+  * a {
+    text-decoration: none;
+    list-style: none;
+    color: white; }
 
 .s-boton, .boton__color, .grilla__contacto .seccion__boton button {
   width: 100%; }
@@ -16,7 +17,7 @@
   height: auto; }
 
 body {
-  min-height: 50vh; }
+  min-height: 100vh; }
 
 header {
   background-color: #f27830;
@@ -38,9 +39,8 @@ header {
 .grilla {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr repeat(7, 1fr);
-  grid-template-areas: "banner" "seccion1" "seccion2" "seccion2" "seccion3" "seccion3" "a-imagen" "seccion4";
-  row-gap: 2em;
+  grid-template-rows: 0.5fr repeat(6, 1fr);
+  grid-template-areas: "banner" "seccion1" "seccion2" "seccion2" "seccion3" "a-imagen" "seccion4";
   justify-content: flex-start; }
   .grilla .seccion1 {
     grid-area: seccion1; }
@@ -106,22 +106,64 @@ header {
   background-color: #f27830;
   max-width: 30%; }
 
+/*
 footer {
   margin-top: 11em;
-  background-color: #f27830; }
-  footer .footer__contenedor {
+  background-color: $colorprincipal;
+    .footer__contenedor{
+      @include m-flex(flex, row, nowrap, space-around, space-around)
+    }
+
+  & .container-fluid {
+    .footer_redes {
+      a {
+        list-style: none;
+        text-decoration: none;
+        color: white;
+      }
+    }
+    & img {
+      width: 100%;
+      max-height: 32px;
+    }
+  }
+}
+*/
+footer {
+  height: 25vh;
+  margin-top: 10px;
+  background-color: #f27830;
+  box-shadow: 1px 1px 2px #1f1f1f;
+  display: grid;
+  grid-template-columns: 20% 60%;
+  grid-template-rows: 60% 20%;
+  grid-template-areas: "hispro socialmedia" "about about";
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center; }
+  footer .footer_link {
+    grid-area: hispro; }
+  footer .footer_socialmedia {
+    width: 100%;
+    grid-area: "socialmedia";
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: space-around; }
-  footer .container-fluid .footer_redes a {
-    list-style: none;
-    text-decoration: none;
-    color: white; }
-  footer .container-fluid img {
-    width: 100%;
-    max-height: 32px; }
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-size: small; }
+    footer .footer_socialmedia div {
+      margin: auto 15px; }
+      footer .footer_socialmedia div img {
+        width: 100%;
+        max-height: 24px; }
+  footer .footer_about {
+    grid-area: about; }
+    footer .footer_about p {
+      font-size: small;
+      color: white; }
 
 .grilla__servicios {
   display: grid;
@@ -245,7 +287,7 @@ footer {
 @media only screen and (min-width: 600px) {
   .grilla {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr repeat(4, 1fr) 0.5fr;
+    grid-template-rows: 20% 20% 0.5fr 20% 0.5fr 20%;
     grid-template-areas: "banner banner" "seccion1 seccion1" "seccion2 seccion2" "seccion3 seccion3" "a-imagen a-imagen" "seccion4 seccion4"; }
     .grilla .seccion2 .seccion__contenedor .seccion__imagen img {
       width: 100%;
@@ -278,7 +320,6 @@ footer {
 @media only screen and (min-width: 900px) {
   .grilla {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr repeat(3, 1fr);
     grid-template-areas: "banner banner banner" "seccion1 seccion1 seccion1" "seccion2 seccion2 seccion2" "seccion3 seccion3 a-imagen" "seccion4 seccion4 seccion4"; }
     .grilla .seccion2 .seccion__contenedor .seccion__imagen img {
       width: 100%;
@@ -293,4 +334,10 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 10% 10% 1fr 1fr 1fr;
-    grid-template-areas: "banner banner banner" "titulo titulo titulo" "articulo1 articulo1 a-imagen1" "a-imagen2 articulo2 articulo2" "articulo3 articulo3 articulo3"; } }
+    grid-template-areas: "banner banner banner" "titulo titulo titulo" "articulo1 articulo1 a-imagen1" "a-imagen2 articulo2 articulo2" "articulo3 articulo3 articulo3"; }
+  footer .footer_socialmedia {
+    font-size: medium; }
+    footer .footer_socialmedia div img {
+      max-height: 32px; }
+  footer .footer_about p {
+    font-size: medium; } }

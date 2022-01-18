@@ -1,16 +1,18 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  transition: all 600ms;
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+  }
 }
 
 //Globales//
 @import "variables", "mixins";
 
 body {
-  min-height: 50vh;
+  min-height: 100vh;
 }
 // Menú de navegación -- Bootstrap //
 header {
@@ -45,17 +47,15 @@ header {
 .grilla {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr repeat(7, 1fr);
+  grid-template-rows: 0.5fr repeat(6, 1fr);
   grid-template-areas:
     "banner"
     "seccion1"
     "seccion2"
     "seccion2"
     "seccion3"
-    "seccion3"
     "a-imagen"
     "seccion4";
-  row-gap: 2em;
   justify-content: flex-start;
 
   & .seccion1 {
@@ -125,6 +125,7 @@ header {
   max-width: 30%;
 }
 // Footer //
+/*
 footer {
   margin-top: 11em;
   background-color: $colorprincipal;
@@ -146,6 +147,51 @@ footer {
     }
   }
 }
+*/
+
+footer {
+  height: 25vh;
+  margin-top: 10px;
+  background-color: $colorprincipal;
+  box-shadow: $sombracaja;
+  display: grid;
+  grid-template-columns: 20% 60%;
+  grid-template-rows: 60% 20%;
+  grid-template-areas:
+    "hispro socialmedia"
+    "about about";
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+
+  .footer_link {
+    grid-area: hispro;
+  }
+  .footer_socialmedia {
+    width: 100%;
+    grid-area: "socialmedia";
+    @include m-flex(flex, row, nowrap, flex-end, center);
+    color: white;
+    font-size: small;
+    div {
+      margin: auto 15px;
+      img {
+        width: 100%;
+        max-height: 24px;
+      }
+    }
+  }
+  .footer_about {
+    grid-area: about;
+    p {
+      font-size: small;
+      color: white;
+    }
+  }
+}
+
+
 // Servicios
 .grilla__servicios {
   display: grid;
@@ -169,19 +215,19 @@ footer {
   .opcion1 {
     grid-area: opcion1;
   }
-  .img-op1{
+  .img-op1 {
     grid-area: img-op1;
   }
   .opcion2 {
     grid-area: opcion2;
   }
-  .img-op2{
+  .img-op2 {
     grid-area: img-op2;
   }
   .opcion3 {
     grid-area: opcion3;
   }
-  .img-op3{
+  .img-op3 {
     grid-area: img-op3;
   }
 
@@ -272,12 +318,14 @@ footer {
   }
   .articulo2 {
     grid-area: articulo2;
+    
   }
   .a-imagen2 {
     grid-area: a-imagen2;
     img {
       @extend .responsivo;
       max-width: 350px;
+      
     }
   }
   .articulo3 {
@@ -338,7 +386,7 @@ footer {
   // Home //
   .grilla {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr repeat(4, 1fr) 0.5fr;
+    grid-template-rows: 20% 20% 0.5fr 20% 0.5fr 20%;
     grid-template-areas:
       "banner banner"
       "seccion1 seccion1"
@@ -346,7 +394,6 @@ footer {
       "seccion3 seccion3"
       "a-imagen a-imagen"
       "seccion4 seccion4";
-
     .seccion2 .seccion__contenedor .seccion__imagen img {
       width: 100%;
       max-height: 500px;
@@ -402,7 +449,6 @@ footer {
   // Home //
   .grilla {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr repeat(3, 1fr);
     grid-template-areas:
       "banner banner banner"
       "seccion1 seccion1 seccion1"
@@ -438,5 +484,20 @@ footer {
       "articulo1 articulo1 a-imagen1"
       "a-imagen2 articulo2 articulo2"
       "articulo3 articulo3 articulo3";
+  }
+  footer {
+    .footer_socialmedia {
+      font-size: medium;
+      div {
+        img {
+          max-height: 32px;
+        }
+      }
+    }
+    .footer_about {
+      p {
+        font-size: medium;
+      }
+    }
   }
 }
